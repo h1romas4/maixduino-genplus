@@ -71,8 +71,12 @@ add_source_files(
     ${PROJ}/maixduino/error.c
     ${PROJ}/maixduino/fileio.c
     ${PROJ}/maixduino/scrc32.c
-    ${PROJ}/maixduino/lcd.c
-    ${PROJ}/maixduino/st7789.c
+    ${PROJ}/maixduino/maixduino.c
+    ${PROJ}/maixduino/lcd/lcd.c
+    ${PROJ}/maixduino/lcd/st7789.c
+    ${PROJ}/maixduino/sdcard/sdcard.c
+    ${PROJ}/maixduino/sdcard/ff.c
+    ${PROJ}/maixduino/sdcard/diskio.c
     ${PROJ}/maixduino/main.c
 )
 add_compile_flags(C

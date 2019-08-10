@@ -26,10 +26,10 @@ void set_config_defaults(void)
   config.mono           = 0;
 
   /* system options */
-  config.system         = 0; /* = AUTO (or SYSTEM_SG, SYSTEM_MARKIII, SYSTEM_SMS, SYSTEM_SMS2, SYSTEM_GG, SYSTEM_MD) */
-  config.region_detect  = 0; /* = AUTO (1 = USA, 2 = EUROPE, 3 = JAPAN/NTSC, 4 = JAPAN/PAL) */
-  config.vdp_mode       = 0; /* = AUTO (1 = NTSC, 2 = PAL) */
-  config.master_clock   = 0; /* = AUTO (1 = NTSC, 2 = PAL) */
+  config.system         = SYSTEM_MD; /* = AUTO (or SYSTEM_SG, SYSTEM_MARKIII, SYSTEM_SMS, SYSTEM_SMS2, SYSTEM_GG, SYSTEM_MD) */
+  config.region_detect  = 3;         /* = AUTO (1 = USA, 2 = EUROPE, 3 = JAPAN/NTSC, 4 = JAPAN/PAL) */
+  config.vdp_mode       = 1;         /* = AUTO (1 = NTSC, 2 = PAL) */
+  config.master_clock   = 1;         /* = AUTO (1 = NTSC, 2 = PAL) */
   config.force_dtack    = 0;
   config.addr_error     = 1;
   config.bios           = 0;
