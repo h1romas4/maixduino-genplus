@@ -72,14 +72,13 @@ int main(void)
 
     lcd_fill_rectangle(100, 100, 200, 200, 0xff00);
 
-    int running = 0;
+    int running = true;
     int sampling_size;
     // emuration loop
-    while(running < 65535) {
+    while(running) {
         system_frame_gen(0);
         sampling_size = audio_update(soundframe) * 2;
         lcd_draw_picture(0, 0, 320, 240, frame_buffer);
-        running++;
     }
 
     free(md_ntsc);
