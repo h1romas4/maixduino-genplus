@@ -50,6 +50,7 @@ int main(void)
     bitmap.height     = 240;
     bitmap.pitch      = 320 * 2;
     bitmap.data       = (uint8_t *)frame_buffer;
+    bitmap.viewport.changed = 3;
 
     // load rom
     load_rom("COLUMS.BIN");
@@ -76,6 +77,7 @@ int main(void)
         sampling_size = audio_update(soundframe) * 2;
         running++;
     }
+    lcd_draw_picture(0, 0, 240, 320, frame_buffer);
 
     lcd_fill_rectangle(100, 100, 200, 200, 0xff00);
 
