@@ -34,7 +34,7 @@ void set_config_defaults(void)
   config.addr_error     = 1;
   config.bios           = 0;
   config.lock_on        = 0; /* = OFF (can be TYPE_SK, TYPE_GG & TYPE_AR) */
-  config.ntsc           = 0;
+  config.ntsc           = 3;
   config.lcd            = 0; /* 0.8 fixed point */
 
   /* display options */
