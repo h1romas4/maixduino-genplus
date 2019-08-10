@@ -54,9 +54,9 @@ int main(void)
 
     // load rom
     load_rom("COLUMS.BIN");
-    printf("romname: %s\n", rominfo.international);
+    printf("copyright: %s\n", rominfo.copyright);
     printf("romstart: %u\n", rominfo.romstart);
-    printf("romend: %u\n", rominfo.romend);
+    printf("romend(genplus endian bug): %u\n", rominfo.romend);
 
     // emurator init
     audio_init(SOUND_FREQUENCY, 0);
@@ -75,7 +75,7 @@ int main(void)
     int running = 0;
     int sampling_size;
     // emuration loop
-    while(running < 1024) {
+    while(running < 65535) {
         system_frame_gen(0);
         sampling_size = audio_update(soundframe) * 2;
         running++;

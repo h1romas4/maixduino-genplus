@@ -22,6 +22,7 @@ int load_archive(char *filename, unsigned char *buffer, int maxsize, char *exten
         f_close(&file);
     }
     printf("rom header first byte(0x53): 0x%x\n", buffer[0x100]);
+    printf("rom data(COLUMS.BIN: 0x1f930: 0x41): 0x%x\n", buffer[0x1f930]);
 
     strncpy(extension, "BIN", 3);
     extension[3] = 0;
