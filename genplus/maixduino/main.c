@@ -43,8 +43,6 @@ int main(void)
     set_config_defaults();
 
     // video ram init
-    sms_ntsc = calloc(1, sizeof(sms_ntsc_t));
-    md_ntsc  = calloc(1, sizeof(md_ntsc_t));
     memset(&bitmap, 0, sizeof(bitmap));
     bitmap.width      = 320;
     bitmap.height     = 240;
@@ -72,17 +70,17 @@ int main(void)
     printf("system_clock: %d\n", system_clock);
     printf("SVP_cycles: %d\n", SVP_cycles);
 
+    lcd_fill_rectangle(100, 100, 200, 200, 0xff00);
+
     int running = 0;
     int sampling_size;
     // emuration loop
     while(running < 65535) {
         system_frame_gen(0);
         sampling_size = audio_update(soundframe) * 2;
+        lcd_draw_picture(0, 0, 320, 240, frame_buffer);
         running++;
     }
-    lcd_draw_picture(0, 0, 240, 320, frame_buffer);
-
-    lcd_fill_rectangle(100, 100, 200, 200, 0xff00);
 
     free(md_ntsc);
     free(sms_ntsc);
