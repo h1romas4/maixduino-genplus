@@ -395,6 +395,7 @@ int load_bios(int system)
 
   switch (system)
   {
+#ifndef MAIXDUINO
     case SYSTEM_MCD:
     {
       /* check if CD BOOTROM is already loaded */
@@ -456,6 +457,7 @@ int load_bios(int system)
       
       return -1;
     }
+#endif
 
     case SYSTEM_GG:
     case SYSTEM_GGMS:
@@ -565,9 +567,12 @@ int load_rom(char *filename)
   if (cart.romsize > 0x800000)
   {
     /* assume no CD is currently loaded */
+#ifndef MAIXDUINO
     cdd.loaded = 0;
+#endif
   }
 
+#ifndef MAIXDUINO
   /* auto-detect CD image file */
   size = cdd_load(filename, (char *)(cart.rom));
   if (size < 0)
@@ -586,10 +591,15 @@ int load_rom(char *filename)
     scd.cartridge.boot = 0x00;
   }
   else
+#endif
   {
     /* load file into ROM buffer */
     char extension[4];
+#ifndef MAIXDUINO
     size = load_archive(filename, cart.rom, cdd.loaded ? 0x800000 : MAXROMSIZE, extension);
+#else
+    size = load_archive(filename, cart.rom, MAXROMSIZE, extension);
+#endif
 
     /* mark BOOTROM as unloaded if they have been overwritten by cartridge ROM */
     if (size > 0x800000)
@@ -709,6 +719,7 @@ int load_rom(char *filename)
   /* Save auto-detected system hardware  */
   romtype = system_hw;
   
+#ifndef MAIXDUINO
   /* CD image file */
   if (system_hw == SYSTEM_MCD)
   {   
@@ -789,6 +800,7 @@ int load_rom(char *filename)
       }
     }
   }
+#endif
 
   /* Force system hardware if requested */
   if (config.system == SYSTEM_MD)

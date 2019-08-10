@@ -163,7 +163,9 @@ void gen_init(void)
       s68k_init();
 
       /* initialize CD hardware */
+#ifndef MAIXDUINO
       scd_init();
+#endif
     }
     else
     {
@@ -277,7 +279,9 @@ void gen_reset(int hard_reset)
       if (hard_reset)
       {
         /* reset CD hardware */
+#ifndef MAIXDUINO
         scd_reset(1);
+#endif
       }
     }
     

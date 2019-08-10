@@ -38,6 +38,8 @@
 #ifndef _HW_CDD_
 #define _HW_CDD_
 
+#ifndef MAIXDUINO
+
 #include "blip_buf.h"
 
 #if defined(USE_LIBVORBIS)
@@ -140,5 +142,7 @@ extern void cdd_read_data(uint8 *dst);
 extern void cdd_read_audio(unsigned int samples);
 extern void cdd_update(void);
 extern void cdd_process(void);
+
+#endif
 
 #endif

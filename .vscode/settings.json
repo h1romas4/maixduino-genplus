@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.toml": "toml",
+        "shared.h": "c",
+        "chrono": "c"
+    }
+}

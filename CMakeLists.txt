@@ -59,12 +59,6 @@ add_source_files(
     ${PROJ}/core/eeprom_spi.c
     ${PROJ}/core/md_cart.c
     ${PROJ}/core/sms_cart.c
-    ${PROJ}/core/scd.c
-    ${PROJ}/core/cdd.c
-    ${PROJ}/core/cdc.c
-    ${PROJ}/core/gfx.c
-    ${PROJ}/core/pcm.c
-    ${PROJ}/core/cd_cart.c
     ${PROJ}/core/sms_ntsc.c
     ${PROJ}/core/md_ntsc.c
     ${PROJ}/maixduino/config.c
@@ -86,6 +80,7 @@ add_compile_flags(C
     -DHAVE_YM3438_CORE
     -DHAVE_ALLOCA_H
     -DUSE_DYNAMIC_ALLOC
+    -DMAIXDUINO
     -fomit-frame-pointer
     -Wno-strict-aliasing
 )
