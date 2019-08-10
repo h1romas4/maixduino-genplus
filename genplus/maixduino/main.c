@@ -17,9 +17,14 @@
 md_ntsc_t *md_ntsc;
 sms_ntsc_t *sms_ntsc;
 
+static uint16_t frame_buffer[320 * 240];
 static short soundframe[SOUND_SAMPLES_SIZE];
 
 struct _zbank_memory_map zbank_memory_map[256];
+
+int sdl_input_update(void) {
+    return 1;
+}
 
 int main(void)
 {
@@ -38,10 +43,13 @@ int main(void)
     set_config_defaults();
 
     // video ram init
-    sms_ntsc = (sms_ntsc_t *)malloc(sizeof(sms_ntsc_t));
-    md_ntsc = (md_ntsc_t *)malloc(sizeof(md_ntsc_t));
-    sms_ntsc_init(sms_ntsc, &sms_ntsc_rgb);
-    md_ntsc_init(md_ntsc, &md_ntsc_rgb);
+    sms_ntsc = calloc(1, sizeof(sms_ntsc_t));
+    md_ntsc  = calloc(1, sizeof(md_ntsc_t));
+    memset(&bitmap, 0, sizeof(bitmap));
+    bitmap.width      = 320;
+    bitmap.height     = 240;
+    bitmap.pitch      = 320 * 2;
+    bitmap.data       = (uint8_t *)frame_buffer;
 
     // load rom
     load_rom("COLUMS.BIN");
@@ -49,6 +57,25 @@ int main(void)
     // emurator init
     audio_init(SOUND_FREQUENCY, 0);
     system_init();
+    system_reset();
+
+    // init result
+    // t_bitmap bitmap;
+    // t_snd snd;
+    printf("mcycles_vdp: %d\n", mcycles_vdp);
+    printf("system_hw: %d\n", system_hw);
+    printf("system_bios: %d\n", system_bios);
+    printf("system_clock: %d\n", system_clock);
+    printf("SVP_cycles: %d\n", SVP_cycles);
+
+    int running = 0;
+    int sampling_size;
+    // emuration loop
+    while(running < 1024) {
+        system_frame_gen(0);
+        sampling_size = audio_update(soundframe) * 2;
+        running++;
+    }
 
     lcd_fill_rectangle(100, 100, 200, 200, 0xff00);
 
