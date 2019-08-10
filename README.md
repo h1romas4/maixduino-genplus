@@ -13,7 +13,7 @@
 
 ## build
 
-compile
+**compile**
 
 ```
 git clone --recursive git@github.com:h1romas4/maixduino-genplus.git
@@ -23,7 +23,7 @@ cmake .. -DPROJ=genplus -DSDK_ROOT=./kendryte-standalone-sdk -DTOOLCHAIN=/opt/ke
 make
 ```
 
-insert SD card with COLUMS.BIN (filename and size fixed, oncoding now)
+**insert SD card with COLUMS.BIN** (filename and size fixed, oncoding now)
 
 genplus/maixduino/fileio.c
 ```
@@ -36,7 +36,7 @@ CMakeLists.txt
     -DMAXROMSIZE=131072
 ```
 
-flash
+**flash**
 
 ```
 kflash -p /dev/ttyUSB0 -b 1500000 -B goE -s -t genplus.bin
