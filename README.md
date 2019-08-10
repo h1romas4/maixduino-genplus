@@ -1,7 +1,7 @@
 # maixduino-genplus
 
 ```
-cd build
+mkdir build & cd build
 cmake .. -DPROJ=genplus -DSDK_ROOT=./kendryte-standalone-sdk -DTOOLCHAIN=/opt/kendryte-toolchain/bin
 ```
 
