@@ -270,6 +270,7 @@ static void m68k_poll_detect(unsigned int reg_mask)
   m68k.poll.pc = m68k.pc;
 }
 
+#ifndef MAIXDUINO
 static void m68k_poll_sync(unsigned int reg_mask)
 {
   /* relative SUB-CPU cycle counter */
@@ -304,6 +305,7 @@ static void m68k_poll_sync(unsigned int reg_mask)
   s68k.poll.detected &= ~reg_mask;
   m68k.poll.detected &= ~reg_mask;
 }
+#endif
 
 /*--------------------------------------------------------------------------*/
 /* I/O Control                                                              */
