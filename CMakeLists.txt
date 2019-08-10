@@ -20,7 +20,6 @@ header_directories(${PROJ})
 add_source_files(
     ${PROJ}/core/z80.c
     ${PROJ}/core/m68kcpu.c
-    ${PROJ}/core/s68kcpu.c
     ${PROJ}/core/genesis.c
     ${PROJ}/core/vdp_ctrl.c
     ${PROJ}/core/vdp_render.c
