@@ -54,6 +54,9 @@ int main(void)
 
     // load rom
     load_rom("COLUMS.BIN");
+    printf("romname: %s\n", rominfo.international);
+    printf("romstart: %u\n", rominfo.romstart);
+    printf("romend: %u\n", rominfo.romend);
 
     // emurator init
     audio_init(SOUND_FREQUENCY, 0);
