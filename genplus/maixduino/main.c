@@ -30,7 +30,7 @@ int main(void)
     set_config_defaults();
 
     load_rom("COLUMS.BIN");
-    // system_init();
+    system_init();
 
     lcd_fill_rectangle(100, 100, 200, 200, 0xff00);
 
