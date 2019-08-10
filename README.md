@@ -23,12 +23,17 @@ cmake .. -DPROJ=genplus -DSDK_ROOT=./kendryte-standalone-sdk -DTOOLCHAIN=/opt/ke
 make
 ```
 
-insert SD Card (filename and size fixed, oncoding now)
+insert SD card with COLUMS.BIN (filename and size fixed, oncoding now)
 
-```
 genplus/maixduino/fileio.c
+```
+if((ret = f_open(&file, "COLUMS.BIN", FA_READ)) == FR_OK) {
+    ret = f_read(&file, (void *)buffer, 131072, &size);
+```
 
-COLUMS.BIN
+CMakeLists.txt
+```
+    -DMAXROMSIZE=131072
 ```
 
 flash
