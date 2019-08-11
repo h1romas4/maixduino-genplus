@@ -22,6 +22,9 @@ void k210_begin(void)
     //  KPU not performing neural network calculations
     sysctl_pll_set_freq(SYSCTL_PLL1, PLL1_OUTPUT_FREQ);
     sysctl_clock_enable(SYSCTL_CLOCK_AI);
+
+    // set clock 600MHz
+    sysctl_cpu_set_freq(600 * 1000 * 1000);
 }
 
 //
