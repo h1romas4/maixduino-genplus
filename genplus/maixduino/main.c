@@ -70,15 +70,14 @@ int main(void)
     printf("system_clock: %d\n", system_clock);
     printf("SVP_cycles: %d\n", SVP_cycles);
 
-    lcd_fill_rectangle(100, 100, 200, 200, 0xff00);
-
     int running = true;
     int sampling_size;
     // emuration loop
     while(running) {
         system_frame_gen(0);
         sampling_size = audio_update(soundframe) * 2;
-        lcd_draw_picture(0, 0, 320, 240, frame_buffer);
+        lcd_set_area(0, 0, 320 - 1, 240 - 1);
+        tft_write_half(frame_buffer, 320 * 240);
     }
 
     free(md_ntsc);
