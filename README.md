@@ -18,7 +18,7 @@
 ```
 git clone --recursive git@github.com:h1romas4/maixduino-genplus.git
 cd maixduino-genplus
-mkdir build & cd build
+mkdir build && cd build
 cmake .. -DPROJ=genplus -DSDK_ROOT=./kendryte-standalone-sdk -DTOOLCHAIN=/opt/kendryte-toolchain/bin
 make
 ```
