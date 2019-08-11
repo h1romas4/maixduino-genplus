@@ -6,6 +6,8 @@
 
 ![image](https://raw.githubusercontent.com/h1romas4/maixduino-genplus/master/assets/progress_02.jpg)
 
+[https://www.youtube.com/watch?v=yvkTfdkFSPQ](https://www.youtube.com/watch?v=yvkTfdkFSPQ)
+
 ## setup require
 
 * [kendryte-toolchain](https://github.com/kendryte/kendryte-gnu-toolchain/releases)
