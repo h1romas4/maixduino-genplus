@@ -4,7 +4,7 @@
 
 ## work in progress
 
-![image](https://raw.githubusercontent.com/h1romas4/maixduino-genplus/master/assets/progres_01.jpg)
+![image](https://raw.githubusercontent.com/h1romas4/maixduino-genplus/master/assets/progres_02.jpg)
 
 ## setup require
 
