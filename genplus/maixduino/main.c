@@ -80,9 +80,6 @@ int main(void)
         tft_write_half(frame_buffer, 320 * 240);
     }
 
-    free(md_ntsc);
-    free(sms_ntsc);
-
     printf("maixduino stabled.\n");
     while(1)
         continue;
