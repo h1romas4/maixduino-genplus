@@ -77,6 +77,8 @@ add_compile_flags(C
     -DMAXROMSIZE=131072
     -DHAVE_ALLOCA_H
     -DUSE_DYNAMIC_ALLOC
+    -DALT_RENDERER
+    -DALIGN_LONG
     -DMAIXDUINO
     -fomit-frame-pointer
     -Wno-strict-aliasing
