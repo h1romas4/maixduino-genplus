@@ -35,7 +35,7 @@ if((ret = f_open(&file, "COLUMS.BIN", FA_READ)) == FR_OK) {
 
 CMakeLists.txt
 ```
-    -DMAXROMSIZE=131072
+    -DMAXROMSIZE=655360
 ```
 
 **flash**

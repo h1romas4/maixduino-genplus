@@ -74,7 +74,7 @@ add_source_files(
 add_compile_flags(C
     -DLSB_FIRST
     -DUSE_16BPP_RENDERING
-    -DMAXROMSIZE=131072
+    -DMAXROMSIZE=655360
     -DHAVE_ALLOCA_H
     -DUSE_DYNAMIC_ALLOC
     -DALT_RENDERER
