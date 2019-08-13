@@ -44,7 +44,6 @@ add_source_files(
     ${PROJ}/core/sound.c
     ${PROJ}/core/psg.c
     ${PROJ}/core/ym2413.c
-    ${PROJ}/core/ym3438.c
     ${PROJ}/core/ym2612.c
     ${PROJ}/core/blip_buf.c
     ${PROJ}/core/eq.c
@@ -76,7 +75,6 @@ add_compile_flags(C
     -DLSB_FIRST
     -DUSE_16BPP_RENDERING
     -DMAXROMSIZE=131072
-    -DHAVE_YM3438_CORE
     -DHAVE_ALLOCA_H
     -DUSE_DYNAMIC_ALLOC
     -DMAIXDUINO
