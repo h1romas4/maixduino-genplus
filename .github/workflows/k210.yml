@@ -19,6 +19,6 @@ jobs:
       run: |
         export PATH=$(pwd)/kendryte-toolchain/bin:${PATH}
         export K210_TOOLCHAIN=$(pwd)/kendryte-toolchain/bin
-        cd build
+        mkdir build && cd build
         cmake .. -DPROJ=genplus -DSDK_ROOT=./kendryte-standalone-sdk -DTOOLCHAIN=${K210_TOOLCHAIN}
         make
