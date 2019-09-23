@@ -17,6 +17,8 @@
 
 ## build
 
+![](https://github.com/h1romas4/maixduino-genplus/workflows/K210%20CI/badge.svg)
+
 **compile**
 
 ```
