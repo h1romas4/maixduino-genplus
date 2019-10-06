@@ -2,13 +2,15 @@
 
 [Genesis-Plus-GX](https://github.com/ekeeke/Genesis-Plus-GX) Maixduino K210 porting
 
-## work in progress
+## Demo
 
 ![image](https://raw.githubusercontent.com/h1romas4/maixduino-genplus/master/assets/progress_02.jpg)
 
 [https://www.youtube.com/watch?v=VV0wlbNg2Bo](https://www.youtube.com/watch?v=VV0wlbNg2Bo)
 
 [https://www.youtube.com/watch?v=yvkTfdkFSPQ](https://www.youtube.com/watch?v=yvkTfdkFSPQ)
+
+LCD bitmap trancefar is not in time due to SPI clock slow.
 
 ## setup require
 
