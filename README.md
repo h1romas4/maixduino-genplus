@@ -22,6 +22,11 @@ $ pwd
 /opt/kendryte-toolchain/bin
 $ ./riscv64-unknown-elf-gcc -v
 gcc version 8.2.0 (GCC)
+$ kflash -h
+...
+positional arguments:
+  firmware              firmware bin path
+...
 ```
 
 ## Build
