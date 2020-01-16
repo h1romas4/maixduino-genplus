@@ -12,26 +12,34 @@
 
 LCD bitmap trancefar is not in time due to SPI clock slow.
 
-## setup require
+## Require
 
-* [kendryte-toolchain](https://github.com/kendryte/kendryte-gnu-toolchain/releases)
+* [Kendryte GNU Toolchain v8.2.0-20190213](https://github.com/kendryte/kendryte-gnu-toolchain/releases/tag/v8.2.0-20190213)
 * [kflash](https://github.com/kendryte/kflash.py)
 
-## build
+```
+$ pwd
+/opt/kendryte-toolchain/bin
+$ ./riscv64-unknown-elf-gcc -v
+gcc version 8.2.0 (GCC)
+```
+
+## Build
 
 ![](https://github.com/h1romas4/maixduino-genplus/workflows/K210%20CI/badge.svg)
 
-**compile**
+**Compile**
 
 ```
-git clone --recursive git@github.com:h1romas4/maixduino-genplus.git
+git clone --recursive https://github.com/h1romas4/maixduino-genplus.git
 cd maixduino-genplus
 mkdir build && cd build
+# set -DTOOLCHAIN to directory Kendryte GNU Toolchain bin path
 cmake .. -DPROJ=genplus -DSDK_ROOT=./kendryte-standalone-sdk -DTOOLCHAIN=/opt/kendryte-toolchain/bin
 make
 ```
 
-**insert SD card with COLUMS.BIN** (filename and size fixed, oncoding now)
+**Insert SD card with COLUMS.BIN** (filename and size fixed, oncoding now)
 
 genplus/maixduino/fileio.c
 ```
@@ -44,12 +52,16 @@ CMakeLists.txt
     -DMAXROMSIZE=655360
 ```
 
-**flash**
+**Flash**
 
 ```
 kflash -p /dev/ttyUSB0 -b 1500000 -B goE -s -t genplus.bin
 ```
 
-# thanks!
+## License
+
+[Genesis-Plus-GX](https://github.com/ekeeke/Genesis-Plus-GX/blob/master/LICENSE.txt) License
+
+## Thanks!
 
 [Genesis-Plus-GX](https://github.com/ekeeke/Genesis-Plus-GX)
