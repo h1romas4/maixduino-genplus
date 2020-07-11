@@ -1,4 +1,3 @@
-
 {
     "configurations": [
         {
@@ -6,10 +5,11 @@
             "includePath": [
                 "${workspaceRoot}/genplus/**",
                 "${workspaceRoot}/kendryte-standalone-sdk/lib/**",
-                "/opt/kendryte-toolchain/lib"
+                "${env:KENDRYTE_TOOLCHAIN_HOME}/**"
             ],
             "cStandard": "c11",
-            "cppStandard": "c++17"
+            "cppStandard": "c++17",
+            "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
     "version": 4

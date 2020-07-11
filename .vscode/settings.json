@@ -3,5 +3,10 @@
         "*.toml": "toml",
         "shared.h": "c",
         "chrono": "c"
+    },
+    "cmake.configureSettings" : {
+        "PROJ": "genplus",
+        "SDK_ROOT": "./kendryte-standalone-sdk",
+        "TOOLCHAIN": "${env:KENDRYTE_TOOLCHAIN_HOME}/bin"
     }
 }
